@@ -26,6 +26,10 @@ export class ResultURLComponent {
   copyURL(): string {
     navigator.clipboard.writeText(this.urlService.baseURl);
     this.snackBar.open('Copyed');
+    return this.generateURL();
+  }
+
+  generateURL(): string {
     return this.urlService.generateURL({
       amenity: this.amenitiesService.amenities.value,
       date: {
@@ -42,6 +46,6 @@ export class ResultURLComponent {
   }
 
   openURL() {
-    window.open(this.copyURL());
+    window.open(this.generateURL());
   }
 }
