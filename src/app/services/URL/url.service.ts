@@ -12,7 +12,9 @@ export class UrlService {
     let url = '';
 
     // date
-    url += `&checkin=${date.start}&checkout=${date.end}`;
+    if (date.start && date.end) {
+      url += `&checkin=${date.start}&checkout=${date.end}`;
+    }
 
     // amenities
     amenity.forEach((amenity) => {

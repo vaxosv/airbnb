@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AmenitiesService } from '../services/amenities/amenities.service';
 import { DateService } from '../services/date/date.service';
 import { DatePipe } from '@angular/common';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-result-url',
@@ -11,6 +12,7 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe],
   templateUrl: './result-url.component.html',
   styleUrl: './result-url.component.css',
+  imports: [MatButton],
 })
 export class ResultURLComponent {
   constructor(
@@ -22,7 +24,6 @@ export class ResultURLComponent {
   ) {}
 
   copyURL() {
-    debugger;
     this.urlService.generateURL({
       amenity: this.amenitiesService.amenities.value,
       date: {
