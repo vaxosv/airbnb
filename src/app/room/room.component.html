@@ -1,0 +1,9 @@
+<h3>ROOM TYPES</h3>
+<mat-form-field>
+  <mat-label>Room types</mat-label>
+  <mat-select (valueChange)="optionChange($event)">
+    @for (option of options; track option) {
+      <mat-option [value]="option">{{ option.label }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>

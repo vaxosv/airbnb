@@ -5,6 +5,7 @@ import { AmenitiesService } from '../services/amenities/amenities.service';
 import { DateService } from '../services/date/date.service';
 import { DatePipe } from '@angular/common';
 import { MatButton } from '@angular/material/button';
+import { RoomService } from '../services/room/room.service';
 
 @Component({
   selector: 'app-result-url',
@@ -21,17 +22,18 @@ export class ResultURLComponent {
     private amenitiesService: AmenitiesService,
     private dateService: DateService,
     private datePipe: DatePipe,
+    private roomService: RoomService,
   ) {}
 
-  copyURL(): string {
-    navigator.clipboard.writeText(this.urlService.baseURl);
-    this.snackBar.open('Copyed');
-    return this.generateURL();
+  copyURL(): void {
+    navigator.clipboard.writeText(this.generateURL());
+    this.snackBar.open('Copyed', '', { duration: 800 });
   }
 
   generateURL(): string {
     return this.urlService.generateURL({
       amenity: this.amenitiesService.amenities.value,
+      room: this.roomService.room$.value,
       date: {
         start: this.datePipe.transform(
           this.dateService.range.value.start,

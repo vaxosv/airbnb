@@ -11,18 +11,22 @@ export class UrlService {
   generateURL({
     amenity,
     date,
+    room,
   }: {
     amenity: Array<Amenity>;
     date: any;
+    room: string;
   }): string {
     let url = '';
 
-    // date
     if (date.start && date.end) {
       url += `&checkin=${date.start}&checkout=${date.end}`;
     }
 
-    // amenities
+    if (room) {
+      url += room;
+    }
+
     amenity.forEach((amenity) => {
       if (amenity.isChecked) {
         url += `&amenities%5B%5D=${amenity.id}`;
