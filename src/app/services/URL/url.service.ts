@@ -8,7 +8,13 @@ export class UrlService {
   baseURl: string =
     'https://www.airbnb.com/?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&search_mode=flex_destinations_search&flexible_trip_lengths%5B%5D=one_week&location_search=MIN_MAP_BOUNDS&monthly_start_date=2024-04-01&monthly_length=3&monthly_end_date=2024-07-01&category_tag=Tag%3A8188&price_filter_input_type=0&channel=EXPLORE';
 
-  generateURL({ amenity, date }: { amenity: Array<Amenity>; date: any }) {
+  generateURL({
+    amenity,
+    date,
+  }: {
+    amenity: Array<Amenity>;
+    date: any;
+  }): string {
     let url = '';
 
     // date
@@ -24,5 +30,7 @@ export class UrlService {
     });
 
     this.baseURl += url;
+
+    return this.baseURl;
   }
 }

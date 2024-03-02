@@ -98,7 +98,7 @@
 `;
 
 export interface Amenity {
-  isChecked?: boolean;
+  isChecked: boolean;
   id: number;
   name: string;
 }

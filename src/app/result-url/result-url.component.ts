@@ -23,8 +23,10 @@ export class ResultURLComponent {
     private datePipe: DatePipe,
   ) {}
 
-  copyURL() {
-    this.urlService.generateURL({
+  copyURL(): string {
+    navigator.clipboard.writeText(this.urlService.baseURl);
+    this.snackBar.open('Copyed');
+    return this.urlService.generateURL({
       amenity: this.amenitiesService.amenities.value,
       date: {
         start: this.datePipe.transform(
@@ -37,7 +39,9 @@ export class ResultURLComponent {
         ),
       },
     });
-    navigator.clipboard.writeText(this.urlService.baseURl);
-    this.snackBar.open('Copyed');
+  }
+
+  openURL() {
+    window.open(this.copyURL());
   }
 }
