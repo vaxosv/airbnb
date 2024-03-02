@@ -1,6 +1,11 @@
+<h3>AMENITIES</h3>
 <div [formGroup]="amenitiesService.filtersForm">
   <div class="amenities" formArrayName="amenities">
-    @for(amenity of amenitiesService.amenities.controls; track amenitiesService.amenities.value.name; let i = $index) {
+    @for (
+      amenity of amenitiesService.amenities.controls;
+      track amenitiesService.amenities.value.name;
+      let i = $index
+    ) {
       <div class="amenity" [formArrayName]="i">
         <mat-checkbox class="example-margin" formControlName="isChecked">
           {{ amenity.value.name }}
@@ -9,4 +14,3 @@
     }
   </div>
 </div>
-
