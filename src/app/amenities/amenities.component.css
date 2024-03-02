@@ -1,0 +1,10 @@
+.amenities {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.amenity {
+  /*width: 100%;*/
+  height: 40px;
+}
