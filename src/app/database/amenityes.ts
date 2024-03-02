@@ -95,6 +95,7 @@
 672 - Wine Glasses
 674 - Beach Access
 9999 - Security Cameras On Property
+248 - Sun loungers
 `;
 
 export interface Amenity {
@@ -581,6 +582,11 @@ export const globalAmenities: Array<Amenity> = [
   {
     id: 9999,
     name: 'Security Cameras On Property',
+    isChecked: false,
+  },
+  {
+    id: 248,
+    name: 'Sun loungers',
     isChecked: false,
   },
 ];
