@@ -579,11 +579,11 @@ export const globalAmenities: Array<Amenity> = [
     name: 'Beach Access',
     isChecked: false,
   },
-  {
-    id: 9999,
-    name: 'Security Cameras On Property',
-    isChecked: false,
-  },
+  // {
+  //   id: 9999,
+  //   name: 'Security Cameras On Property',
+  //   isChecked: false,
+  // },
   {
     id: 248,
     name: 'Sun loungers',
